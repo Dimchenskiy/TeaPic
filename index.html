@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Prata&family=Roboto:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://allfont.ru/allfont.css?fonts=bodoni-cyrillic"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <style media="screen">
+      .test {
+        width: 56%;
+        height: auto;
+        display: flex;
+        padding-top: 1.7vw;
+        padding-bottom: 1.3vw;
+        flex-flow: column;
+        align-items: center;
+        justify-content: center;
+      }
+      .test-head {
+        width: 62%;
+        height: auto;
+        display: flex;
+        padding-top: 3.2vw;
+        padding-bottom: 2.7vw;
+        flex-flow: column;
+        align-items: center;
+        justify-content: center;
+      }
+      .blue {
+        background-color: #f0f0f0;
+        transition: 1s;
+      }
+      .example {
+        position: absolute;
+        width: 100%;
+        height: auto;
+        top: 0px;
+        left: 0px;
+        opacity: 0;
+      }
+      .main {
+        /* position: absolute;
+        top: 350px;
+        left: 0px; */
+        /* убрать сверху */
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+      }
+      .fl-row * {
+        box-sizing: border-box;
+      }
+      .fl-row {
+        display: flex;
+        width: 93%;
+        flex-wrap: wrap;
+        margin: 0.65vw 0;
+        justify-content: center;
+        transition: 0.2s;
+      }
+      .fl-row-head * {
+        box-sizing: border-box;
+      }
+      .fl-row-head {
+        display: flex;
+        width: 93%;
+        flex-wrap: wrap;
+        margin-top: 1.7vw;
+        justify-content: center;
+      }
+      .fl-row-green * {
+        box-sizing: border-box;
+      }
+      .fl-row-green {
+        display: flex;
+        width: 93%;
+        flex-wrap: wrap;
+        margin: 0.65vw 0;
+        justify-content: center;
+        transition: 0.2s;
+      }
+      .fl-row-herbal * {
+        box-sizing: border-box;
+      }
+      .fl-row-herbal {
+        display: flex;
+        width: 93%;
+        flex-wrap: wrap;
+        margin: 0.65vw 0;
+        justify-content: center;
+        transition: 0.2s;
+      }
+
+      .fl-col {
+        /* width: calc(20% - 10px); */
+        width: 21%;
+        height: 13.6vw;
+        margin: 1.5%;
+        position: relative;
+        overflow: hidden;
+        border: 1px solid #d8d8d8;
+        border-radius: 2vw;
+      }
+      .fl-col:after {
+        content: "";
+        padding-top: 100%;
+        float: left;
+      }
+      .fl-col-head {
+        /* width: calc(20% - 10px); */
+        width: 29%;
+        height: 19vw;
+        margin: 1.5%;
+        position: relative;
+        overflow: hidden;
+        border: 1px solid #d8d8d8;
+        border-radius: 2vw;
+      }
+      .fl-col-head:after {
+        content: "";
+        padding-top: 100%;
+        float: left;
+      }
+      .fl-col-head:hover {
+        background: #f0f0f0;
+      }
+      .fl-col-head-green {
+        /* width: calc(20% - 10px); */
+        width: 29%;
+        height: 19vw;
+        margin: 1.5%;
+        position: relative;
+        overflow: hidden;
+        border: 1px solid #d8d8d8;
+        border-radius: 2vw;
+      }
+      .fl-col-head-green:after {
+        content: "";
+        padding-top: 100%;
+        float: left;
+      }
+      .fl-col-head-green:hover {
+        background: #f0f0f0;
+      }
+      .fl-col-head-herbal {
+        /* width: calc(20% - 10px); */
+        width: 29%;
+        height: 19vw;
+        margin: 1.5%;
+        position: relative;
+        overflow: hidden;
+        border: 1px solid #d8d8d8;
+        border-radius: 2vw;
+      }
+      .fl-col-head-herbal:after {
+        content: "";
+        padding-top: 100%;
+        float: left;
+      }
+      .fl-col-head-herbal:hover {
+        background: #f0f0f0;
+      }
+      .fl-col-text {
+        /* padding: 20px; */
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+        /* justify-content: space-around; */
+        font-family: "Bodoni Cyrillic", arial;
+        justify-content: flex-start;
+        text-align: center;
+        line-height: 1.6vw;
+        font-size: 1.6vw;
+        color: #141414;
+      }
+      .fl-col-text-head {
+        /* padding: 20px; */
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+        /* justify-content: space-around; */
+        font-family: "Bodoni Cyrillic", arial;
+        justify-content: flex-start;
+        text-align: center;
+        line-height: 1.6vw;
+        font-size: 2.2vw;
+
+        color: #141414;
+      }
+      @media screen and (min-width: 1900px) {
+        .fl-col-text-head {
+          font-size: 40px;
+        }
+      }
+      img {
+        width: 100%;
+        height: 100%;
+      }
+      .blocker {
+        display: none;
+      }
+      .hidden {
+        opacity: 0;
+        transition: 0.2s;
+      }
+    </style>
+    <script>
+      $(document).ready(function () {
+        $(".fl-col-head-green").click(function () {
+          $(".fl-col-head-green").addClass("blue");
+          setTimeout(function () {
+            $(".fl-col-head, .fl-col-head-herbal").removeClass("blue");
+          }, 40);
+          setTimeout(function () {
+            $(".fl-row, .fl-row-herbal").addClass("hidden");
+          }, 50);
+          setTimeout(function () {
+            $(".fl-row, .fl-row-herbal").addClass("blocker");
+          }, 300);
+          setTimeout(function () {
+            $(".fl-row-green").removeClass("blocker");
+          }, 310);
+          setTimeout(function () {
+            $(".fl-row-green").removeClass("hidden");
+          }, 340);
+        });
+      });
+
+      $(document).ready(function () {
+        $(".fl-col-head-herbal").click(function () {
+          $(".fl-col-head-herbal").addClass("blue");
+          setTimeout(function () {
+            $(".fl-col-head, .fl-col-head-green").removeClass("blue");
+          }, 40);
+          setTimeout(function () {
+            $(".fl-row, .fl-row-green").addClass("hidden");
+          }, 50);
+          setTimeout(function () {
+            $(".fl-row, .fl-row-green").addClass("blocker");
+          }, 300);
+          setTimeout(function () {
+            $(".fl-row-herbal").removeClass("blocker");
+          }, 310);
+          setTimeout(function () {
+            $(".fl-row-herbal").removeClass("hidden");
+          }, 340);
+        });
+      });
+
+      $(document).ready(function () {
+        $(".fl-col-head").click(function () {
+          $(".fl-col-head").addClass("blue");
+          setTimeout(function () {
+            $(".fl-col-head-herbal, .fl-col-head-green").removeClass("blue");
+          }, 40);
+          setTimeout(function () {
+            $(".fl-row-herbal, .fl-row-green").addClass("hidden");
+          }, 50);
+          setTimeout(function () {
+            $(".fl-row-herbal, .fl-row-green").addClass("blocker");
+          }, 300);
+          setTimeout(function () {
+            $(".fl-row").removeClass("blocker");
+          }, 310);
+          setTimeout(function () {
+            $(".fl-row").removeClass("hidden");
+          }, 340);
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <div class="example">
+      <img src="Frame 13 (1).png" alt="" />
+    </div>
+    <div class="main">
+      <div class="fl-row-head">
+        <div class="fl-col-head">
+          <div class="fl-col-text-head">
+            <div class="test-head">
+              <img src="TeaPic/Black-Line-Cardamom-New-- 10.png" alt="" />
+            </div>
+            Черный чай
+          </div>
+        </div>
+        <div class="fl-col-head-green">
+          <div class="fl-col-text-head">
+            <div class="test-head">
+              <img src="TeaPic/Group 41.png" alt="" />
+            </div>
+            Зеленый чай
+          </div>
+        </div>
+        <div class="fl-col-head-herbal">
+          <div class="fl-col-text-head">
+            <div class="test-head">
+              <img src="TeaPic/Group 47.png" alt="" />
+            </div>
+            Чайные напитки
+          </div>
+        </div>
+      </div>
+      <div class="fl-row">
+        <div class="fl-col">
+          <div class="fl-col-text">
+            <div class="test">
+              <img src="TeaPic/Black-Line-Cardamom-New-- 8.png" alt="" />
+            </div>
+            Чай черный со вкусом кардамона
+          </div>
+        </div>
+        <div class="fl-col">
+          <div class="fl-col-text">
+            <div class="test">
+              <img src="TeaPic/Black-Line-Cardamom-New-- 9.png" alt="" />
+            </div>
+            Чай черный со вкусом корицы
+          </div>
+        </div>
+        <div class="fl-col">
+          <div class="fl-col-text">
+            <div class="test">
+              <img src="TeaPic/Black-Line-Cardamom-New-- 10.png" alt="" />
+            </div>
+            Чай черный<br />с бергамотом
+          </div>
+        </div>
+        <div class="fl-col">
+          <div class="fl-col-text">
+            <div class="test">
+              <img src="TeaPic/Black-Line-Cardamom-New-- 11.png" alt="" />
+            </div>
+            Чай черный со вкусом лимона
+          </div>
+        </div>
+        <div class="fl-col">
+          <div class="fl-col-text">
+            <div class="test">
+              <img src="TeaPic/Black-Line-Cardamom-New-- 12.png" alt="" />
+            </div>
+            Чай черный со вкусом персика
+          </div>
+        </div>
+        <div class="fl-col">
+          <div class="fl-col-text">
+            <div class="test">
+              <img src="TeaPic/Black-Line-Cardamom-New-- 13.png" alt="" />
+            </div>
+            Чай черный “Royal”
+          </div>
+        </div>
+        <!-- Еще блоки -->
+        <div class="fl-col">
+          <div class="fl-col-text">
+            <div class="test">
+              <img src="TeaPic/Group 38.png" alt="" />
+            </div>
+            Чай черный<br />с шафраном
+          </div>
+        </div>
+      </div>
+      <div class="fl-row-green hidden blocker">
+        <div class="fl-col">
+          <div class="fl-col-text">
+            <div class="test">
+              <img src="TeaPic/Group 39.png" alt="" />
+            </div>
+            Зеленый чай<br />с корицей
+          </div>
+        </div>
+        <div class="fl-col">
+          <div class="fl-col-text">
+            <div class="test">
+              <img src="TeaPic/Group 40.png" alt="" />
+            </div>
+            Зеленый чай<br />с мятой
+          </div>
+        </div>
+        <div class="fl-col">
+          <div class="fl-col-text">
+            <div class="test">
+              <img src="TeaPic/Group 41.png" alt="" />
+            </div>
+            Зеленый чай
+          </div>
+        </div>
+      </div>
+      <div class="fl-row-herbal hidden blocker">
+        <div class="fl-col">
+          <div class="fl-col-text">
+            <div class="test">
+              <img src="TeaPic/Group 42.png" alt="" />
+            </div>
+            Ромашка
+          </div>
+        </div>
+        <div class="fl-col">
+          <div class="fl-col-text">
+            <div class="test">
+              <img src="TeaPic/Group 43.png" alt="" />
+            </div>
+            Для стройности
+          </div>
+        </div>
+        <div class="fl-col">
+          <div class="fl-col-text">
+            <div class="test">
+              <img src="TeaPic/Group 44.png" alt="" />
+            </div>
+            Фитнес
+          </div>
+        </div>
+        <div class="fl-col">
+          <div class="fl-col-text">
+            <div class="test">
+              <img src="TeaPic/Group 45.png" alt="" />
+            </div>
+            Облегчает симптомы простуды
+          </div>
+        </div>
+        <div class="fl-col">
+          <div class="fl-col-text">
+            <div class="test">
+              <img src="TeaPic/Group 46.png" alt="" />
+            </div>
+            Каркаде
+          </div>
+        </div>
+        <div class="fl-col">
+          <div class="fl-col-text">
+            <div class="test">
+              <img src="TeaPic/Group 47.png" alt="" />
+            </div>
+            Успокаивающий
+          </div>
+        </div>
+        <div class="fl-col">
+          <div class="fl-col-text">
+            <div class="test">
+              <img src="TeaPic/Group 48.png" alt="" />
+            </div>
+            Для бодрости
+          </div>
+        </div>
+        <div class="fl-col">
+          <div class="fl-col-text">
+            <div class="test">
+              <img src="TeaPic/Group 49.png" alt="" />
+            </div>
+            Способствует<br />пищеварению
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
